@@ -1,0 +1,57 @@
+{{ if .Site.Data.homepage.education.enable }}
+<section class=" pos-rel pT40 sm-pT20 pB40 sm-pB20">
+  <div class="">
+    <div class="row rad-fade-down rad-waiting rad-animate">
+      <div class="col-12">
+        <h2 class="fs40 color-themer fw-bold">{{ .Site.Data.homepage.education.title }}</h2>
+        <div class="grid grid-col3 grid-md-col2 grid-sm-col1 sm-gap10 gap30 mT30">
+          {{ range $index, $education := .Site.Data.homepage.education.items }}
+          <div class="experience  sm-w-100" title="click to more" id="education-toggle-{{ add $index 1 }}">
+            <div class="fs13 fw-bold color-gray flex gap10 ponter-none">
+              <i class="material-symbols-rounded fw-normal color-gray  fs18 ">
+                date_range
+              </i>
+              {{ .year }}
+            </div>
+            <div class="fs20 color-body  flexC gap10 ponter-none">
+              <i class="material-symbols-rounded fw-normal color-gray  fs18 ">
+                apartment
+              </i>
+              {{ $education.university }}
+            </div>
+            <div class="  fs14 fw-bold color-gray flex gap10 ponter-none">
+              <i class="material-symbols-rounded fw-normal color-gray  fs18 ">
+                school
+              </i>
+              {{ $education.degree }}
+            </div>
+          </div>
+          {{end}}
+        </div>
+        {{ range $index, $education := .Site.Data.homepage.education.items }}
+        <div class="experience-view" id="education-view{{ add $index 1 }}">
+          <div class="experience-view-contain">
+            <i class="close-icon material-symbols-rounded fw-normal sm-dN" id="close-view">close</i>
+            <div class="overf-A h-100 pR10">
+              <a class="flex gap20" href="{{ $education.collegeLink }}">
+                <h3 class="color-body fs26 fw-normal sm-fs22"> {{ $education.university }}</h3>
+                <i class="material-symbols-rounded fw-normal fs30">
+                  link
+                </i>
+              </a>
+              <h4 class="color-subtitle fs22 fw-normal"> {{ $education.degree }}</h4>
+              <p class="fs18 pR10">{{ $education.detail }}</p>
+            </div>
+            <div class="flex justifyE pR5 dN mobile-view close-btn-absolute ">
+              <button class="cl-btn cl-btn-primary sm" id="close-view">close</button>
+            </div>
+          </div>
+
+        </div>
+        {{end}}
+      </div>
+    </div>
+  </div>
+  <div class="horizontal-line"></div>
+</section>
+{{ end }}

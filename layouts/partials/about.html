@@ -1,0 +1,22 @@
+
+<section id="about" class="pT50 ">
+  <div class="">
+    <div class="flex gap20 md-dir-reverse">
+      <div class="custom-col  about-profile-image p40">
+        <img class="borderR5" src="images/alok/aalok.jpg" alt="my family">
+      </div>
+      <div class="custom-col custom-col-content">
+        <h2 class="fs40 color-themer fw-bold">{{ .Site.Data.homepage.about.title }}</h2>
+        {{ .Site.Data.homepage.about.content | safeHTML }}
+        <div class="mY20">
+          <a href="{{ .Site.Data.homepage.about.button.URL }}" target="_blank">
+            <button class="cl-btn cl-btn-primary">
+              <i class="material-symbols-rounded mR10">sentiment_satisfied</i>
+              {{ .Site.Data.homepage.about.button.btnText }}
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,78 @@
+{{ if .Site.Data.homepage.experience.enable }}
+<section id="experience" class="pT30 sm-pT0">
+    <div class="">
+        <div class="flex-col ">
+            <div class="flexC gap30">
+                <h2 class="fs40 color-themer fw-bold">{{ .Site.Data.homepage.experience.title }}</h2>
+                <a href="{{ .Site.Data.homepage.experience.button.URL }}">
+                    <button class="cl-btn cl-btn-primary">
+                        <i class="{{ .Site.Data.homepage.experience.button.icon }}"></i>
+                        {{ .Site.Data.homepage.experience.button.btnText }}
+                    </button>
+                </a>
+            </div>
+            <div class="grid grid-col3 grid-md-col2 grid-sm-col1 sm-gap10 gap30 mT30">
+                {{ range $index, $experience := .Site.Data.homepage.experience.items }}
+                <div class="experience" title="click to more" id="experience-toggle-{{ add $index 1 }}">
+                    <div class="ponter-none color-gray fs13 fw-bold flex gap10">
+                        <i class="material-symbols-rounded color-themer fs18">
+                            date_range
+                        </i>
+                        {{ $experience.duration }}</div>
+                    <div class="ponter-none fs18 color-body flex gap10">
+                        <i class="material-symbols-rounded color-themer fs18 ">
+                            work_history
+                        </i>
+                        <p>  {{ $experience.company }}</p>
+                      
+                    </div>
+                    <div class="ponter-none fs14 color-body flex gap10">
+                        <i class="material-symbols-rounded color-themer fs18 ">
+                            location_on
+                        </i>
+                        <p class="under">{{$experience.location }}</p>
+                    </div>
+
+                    <div class="ponter-none fs14 color-gray fw-bold flex gap10">
+                        <i class="material-symbols-rounded color-themer fw-bold fs18">
+                            person
+                        </i>
+                        {{ $experience.title }}
+                    </div>
+
+                </div>
+                {{ end }}
+            </div>
+
+            {{ range $index, $experience := .Site.Data.homepage.experience.items }}
+            <div class="experience-view" id="exp-view{{ add $index 1 }}">
+                <div class="experience-view-contain">
+                    <i class="close-icon material-symbols-rounded sm-dN" id="close-view">close</i>
+                    <div class="overf-A h-100 pR10">
+                        <a class="flex gap20 link color-body w-fit" href="{{$experience.companyLink }}"  target="_blank"
+                            id="{{ anchorize $experience.company }}">
+                            <h3 class="fs26 fw-normal sm-fs22">{{ $experience.company }},
+                                <span class="experience__location">
+                                    {{$experience.location }}
+                                </span>
+                            </h3>
+                            <i class="material-symbols-rounded pB5 color-title fs30">
+                                link
+                            </i>
+                        </a>
+                        <h4 class="color-subtitle fs22 fw-normal ">{{ $experience.title }}</h4>
+                        <p class="fs18 pR10 ">{{ $experience.detail | safeHTML }}</p>
+                       
+                    </div>
+                    <div class="flex justifyE pR5 dN mobile-view close-btn-absolute ">
+                        <button class="cl-btn cl-btn-primary sm" id="close-view">close</button>
+                    </div>
+                </div>
+
+            </div>
+            {{ end }}
+
+        </div>
+    </div>
+</section>
+{{ end }}

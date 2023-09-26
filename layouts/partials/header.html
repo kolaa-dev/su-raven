@@ -1,0 +1,45 @@
+<div class="header flexC flex-col p30 gap30">
+  <div class="profile-image-box">
+    <img class="borderR5" src="{{ .Site.Data.homepage.header.image }}" alt="profile" loading="lazy">
+  </div>
+  <div class="flexC pos-rel">
+    <ul role="list" class="cl-nav cl-nav-tabs" id="cl-nav-tabs">
+      {{ range .Site.Data.homepage.header.navigation_tabs }}
+        <li class="cl-nav-item" id="{{ .id }}" onclick="changeTab('{{ .id }}');">
+          <a class="cl-nav-link" href="{{ .url }}">
+            <span class="material-symbols-rounded fs20 color-tab">
+              {{ .icon }}
+            </span>
+            {{ .name }}
+          </a>
+        </li>
+      {{ end }}  
+      <li class="cl-nav-item " id="{{ .Site.Data.homepage.header.contact_tab.id }}" onclick="changeTab('{{ .Site.Data.homepage.header.contact_tab.id }}');">
+        <a class="cl-nav-lin" href="{{ .Site.Data.homepage.header.contact_tab.url }}">
+          <button class="cl-btn cl-btn-primary sm sm-cl-btn-special">
+            <i class="material-symbols-rounded fs20 mR5 ">{{ .Site.Data.homepage.header.contact_tab.icon }}</i>
+            {{ .Site.Data.homepage.header.contact_tab.name }}
+          </button>
+        </a>
+      </li>  
+      <li class="cl-nav-item mT20 sm-mT0">
+        <div class="social-icon pos-rel sm-mB10">
+          {{ with .Site.Data.homepage.footer.social_icons }}
+            {{ range . }}
+              <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ .name }}">
+                <i class="fab {{ .icon }}"></i>
+              </a>
+            {{ end }}
+          {{ end }}
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="dark-mode-body flex gap20 pos-abs">
+    <button class="cl-btn cl-btn-borderless" id="darkMode">
+      <i class="material-symbols-rounded color-info sunny" title="light mode">light_mode</i>
+      <i class="material-symbols-rounded color-info darky" title="dark mode"> dark_mode</i>
+    </button>
+
+  </div>
+</div>

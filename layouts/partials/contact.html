@@ -1,0 +1,117 @@
+{{ $contactData := .Site.Data.homepage.contact }}
+{{ if .Site.Data.homepage.contact.enable }}
+
+<section id="contact" class="pT60 sm-pT20 section-contact flex-col alignC pB20 sm-pB10">
+    <div class="contact w-100">
+        <div class="flex gap30 sm-flex-col">
+            <div class="contact__info flex-col">
+                <div class="">
+                    <h3 class="color-white textC mobile-contact-head">
+                        {{ $contactData.contacthead.heading}}</h3>
+                </div>
+                <div class="textC bg-boddy color-subtitle h-100 fs18 borderR5 p10">
+                    {{ $contactData.contacthead.innerText | safeHTML }}
+                </div>
+
+            </div>
+            <div class="form-input-box">
+                <!-- <form action="https://formsubmit.co/aalok@kolaa.me" class="flex-col gap50 sm-gap20 w-100 justifyC" method="POST"> -->
+                <form action="{{ $contactData.form.action }}" id="formkolaa"
+                    class="flex-col gap50 sm-gap20 w-100 justifyC" method="POST" >
+                    <div class="flex gap20 sm-flex-col">
+                        <div class="w-100">
+                            <label class="contact-label" for="full_name">Name</label>
+                            <input type="text" name="name" class="cl-form-control sp-form" id="full_name"
+                                placeholder="Enter Full Name" required>
+                        </div>
+                        <div class="w-100">
+                            <label class="contact-label" for="email">Email</label>
+                            <input type="text" name="email" class="cl-form-control sp-form" id="email"
+                                placeholder="Enter Email Address" required>
+                            <span id="errorMessage" class="error-message"></span>
+                        </div>
+                    </div>
+                    <input type="hidden" name="_subject" value="New submission!">
+                    <input type="hidden" name="_blacklist" value="spammy pattern, banned term, phrase">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_autoresponse" value="Thanks for visit">
+                    <input type="hidden" name="_next" value="{{ .Permalink }}">
+                    <input type="hidden" name="_template" value="table">
+
+                    <div class="flex gap30 alignE flexW">
+                        <div class="flexG">
+                            <label class="contact-label" for="message">Message</label>
+                            <textarea name="message" id="message" cols="30" rows="3" class="cl-form-textarea"
+                                placeholder="{{ $contactData.form.message }}" required></textarea>
+                        </div>
+                        <div id="captchaAdd" style="display: none;"></div>
+
+                        <div class="pB10  justifyE sm-w-100 pos-rel">
+                            <button type="submit" class="cl-btn cl-btn-primary" id="sendMessageButton" style="display: none;">
+                                Send Message
+                                <i class="material-symbols-rounded mL5">arrow_right_alt</i>
+                            </button>
+                            <button type="button" class="cl-btn cl-btn-primary" id="openCaptchaButton"
+                                onclick="openRecaptcha()">
+                                Send Message
+                                <i class="material-symbols-rounded mL5">arrow_right_alt</i>
+                            </button>
+
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+</section>
+
+<script>
+    let recaptchaToken = '';
+    function openRecaptcha() {
+        grecaptcha.render('captchaAdd', {
+            'sitekey': '{{ $contactData.captcha_id }}',
+            'theme': 'light', // Choose the theme (light or dark)
+            'callback': function (token) {
+                recaptchaToken = token; // Store the token in the recaptchaToken variable
+                console.log(recaptchaToken); // Optionally, log the token to the console
+            },
+        });
+        document.getElementById('captchaAdd').style.display = 'block';
+        document.getElementById('openCaptchaButton').style.display = 'none';
+        document.getElementById('sendMessageButton').style.display = 'flex';
+    }
+
+    // Add a click event listener to the "Send Message" button
+    document.getElementById('sendMessageButton').addEventListener('click', function () {
+        if (!recaptchaToken) {
+            alert('Please complete the reCAPTCHA challenge.');
+            return;
+        }
+
+        // Get other form data
+        const formData = new FormData(document.querySelector('#formkolaa'));
+
+        // Append the reCAPTCHA token
+        formData.append('recaptchaToken', true);
+
+        // Send the form data to your server
+        fetch('{{ $contactData.form.action }}', {
+            method: 'POST',
+            body: formData,
+        })
+            .then(response => {
+                if (response.ok) {
+                    alert('Your message has been sent.');
+                } else {
+                    alert('Something went wrong.');
+                }
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    });
+
+
+</script>
+
+{{ end }}

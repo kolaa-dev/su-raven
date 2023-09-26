@@ -1,0 +1,143 @@
+{{ define "main" }}
+<style>
+    .comment-box>.header {
+        height: auto !important;
+    }
+</style>
+<div class="flexG">
+    <div class="single-blog-post-container pos-rel">
+
+        <div class="flex justifySB">
+            <div class="">
+
+                <!-- <h1 class="single-blog-post-title fs26">{{ .Params.Article }}</h1> -->
+                {{ if .Params.Title }}
+                <h1 class="single-blog-post-title fs26">{{.Title}}</h1>
+                {{end}}
+                {{ if .Params.BookIntro }}
+                <h4 class="single-blog-post-title fs18">{{.Params.BookIntro}}</h4>
+                {{end}}
+                {{ if .Params.Author }}
+                <div class="single-blog-post-date color-gray">Author By: <span class="color-body">{{ .Params.Author
+                        }}</span></div>
+                {{end}}
+                {{ if .Params.Link }}
+                <div class="single-blog-post-date color-gray">Narrated By: <span class="color-body">{{ .Params.Narrater
+                        }}</span></div>
+                {{end}}
+                {{ if .Params.Narrater }}
+                <div class="single-blog-post-date color-gray">Link: <a href="{{ .Params.Link }}" target="_blank"
+                        class="color-title">Click to Read</a></div>
+                {{end}}
+                <div class="single-blog-post-date">{{ .Date.Format "Jan 2, 2006" }}</div>
+            </div>
+            
+            {{ if .Params.Author }}
+            <a href="/book" class="back-list-btn">
+                <button class="close-button cl-btn cl-btn-primary sm">
+                    <i class="close-icon material-symbols-rounded" id="close-view">close</i>
+                </button>
+            </a>
+            {{ else }}
+            <a href="/blog" class="back-list-btn">
+                <button class="close-button cl-btn cl-btn-primary sm">
+                    <i class="close-icon material-symbols-rounded" id="close-view">close</i>
+                </button>
+            </a>
+            {{ end }}
+        </div>
+
+        <hr>
+        <div class="single-blog-post-content">
+            {{ .Content | safeHTML }}
+        </div>
+        <div class="post-footer mT20">
+            <div class="post-footer-line post-footer-line-1">
+                <span class="post-author vcard">
+                    Posted by
+                    <a class="g-profile" href="/" title="author profile">{{.Site.Title}}</a>
+                </span>
+                <span class="post-timestamp color-subtitle">
+                    <span class="mR5 color-body">at</span>
+                    {{ .Date.Format "Jan 2, 2006" }}
+                </span>
+                <button class="cl-btn cl-btn-primary sm mL10" id="commentButton">
+                    comment
+                </button>
+            </div>
+
+            <div class="post-share-buttons goog-inline-block">
+                <a class="goog-inline-block share-button sb-email"
+                    href="mailto:?subject=Check%20out%20this%20post&body={{ .Permalink }}" title="Email This">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+                <a class="goog-inline-block share-button sb-facebook" href="javascript:void(0);"
+                    onclick="shareToFacebook()" title="Share to Facebook">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a class="goog-inline-block share-button sb-twitter" href="javascript:void(0);"
+                    onclick="shareToTwitter()" title="Share to Twitter">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                <a class="goog-inline-block share-button sb-whatsapp" href="javascript:void(0);"
+                    onclick="shareToWhatsApp()" title="Share on WhatsApp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+        <!-- comment box -->
+        <div class="commentbox hide" id="commentbox"></div>
+        <div class="flex justifySB mT30 sm-mT10">
+            <div class="flex gap20 sm-gap10 btn-box">
+                {{ if .PrevInSection }}
+                <a class="" href="{{ .PrevInSection.RelPermalink }}"><button class="cl-btn cl-btn-primary sm">Prev
+                        </button></a>
+                {{ end }}
+                {{ if .NextInSection }}
+                <a class="" href="{{ .NextInSection.RelPermalink }}"><button class="cl-btn cl-btn-primary sm">Next
+                        </button></a>
+                {{ end }}
+            </div>
+            {{ if .Params.Author }}
+            <a class="" href="/book"><button class="cl-btn cl-btn-primary sm">Back to books</button></a>
+            {{ else }}
+            <a class="" href="/blog"><button class="cl-btn cl-btn-primary sm">Back to posts</button></a>
+            {{end}}
+        </div>
+    </div>
+</div>
+
+<script>
+    function getCurrentURL() {
+        return window.location.href;
+    }
+
+    function shareToTwitter() {
+        var url = getCurrentURL();
+        var message = "Check out this post: " + url;
+        var twitterUrl = "https://twitter.com/intent/tweet?url=" + encodeURIComponent(url) + "&text=" + encodeURIComponent(message);
+        window.open(twitterUrl, "_blank");
+    }
+
+    function shareToFacebook() {
+        var url = getCurrentURL();
+        var message = "Check out this post: " + url;
+        var facebookUrl = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(url) + "&quote=" + encodeURIComponent(message);
+        window.open(facebookUrl, "_blank");
+    }
+
+    function shareToWhatsApp() {
+        var url = getCurrentURL();
+        var message = "Check out this post: " + url;
+        var whatsappUrl = "https://api.whatsapp.com/send?text=" + encodeURIComponent(message);
+        window.open(whatsappUrl, "_blank");
+    }
+    function scrollToContent() {
+        var headerHeight = document.querySelector('.header').offsetHeight; // Replace with your actual header class or ID
+        window.scrollTo(0, headerHeight);
+    }
+
+    // Scroll to the content position on page load
+    window.onload = scrollToContent;
+</script>
+{{ end }}

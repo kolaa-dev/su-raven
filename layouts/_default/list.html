@@ -1,0 +1,71 @@
+{{ define "main" }}
+{{ if eq .Params.type "book" }}
+<div class="blog-posts flexG">
+    <div class="bookshelf--frame mB20 flex-col gap20">
+        {{ range .Data.Pages.GroupByParam "folder" }}
+        {{ $folder := .Key }}
+        <div class="h-fit">
+            <h2 class="bookhead">{{ $folder }}</h2>
+            <div class=" m-Auto flex flexW">
+                {{ range .Pages }}
+
+                <div class="book-wrapper">
+                    <div class="sm-w-100">
+                        <a href="{{ .RelPermalink }}" class="bookbox">
+                            <img src="{{ .Params.Image }}"
+                                alt="{{ .Title }}" loading="lazy">
+                        </a>
+                        <!-- <div class="book-detail"> -->
+                            <div class="author fs12 fw-bold mT5 w-180">
+                                <p class="ellips-w-100 color-body">{{ .Params.Author }}</p>
+                                <p class="ellips-w-100 color-secondary" title="{{ .Title }}">{{ .Title }}</p>
+                            </div>
+                        <!-- </div> -->
+                    </div>
+                    
+                </div>
+                {{ end }}
+            </div>
+        </div>
+
+        {{ end }}
+    </div>
+</div>
+{{ else }}
+<div class="blog-posts flexG">
+    <div class="blog-posts-container p-10">
+        <div class="blog-posts-title flex gap10 color-theme">
+            <i class="material-symbols-rounded post-icon fs28">post_add</i>
+            <h1 class="fs26">Blog Posts</h1>
+        </div>
+        <ul role="list" class="blog-posts-items pL0">
+            {{ range .Paginator.Pages }}
+            <li class="blog-posts-item">
+                <a class="blog-post-card" href="{{ .Permalink }}">
+                    <!-- <img class="blog-post-card-image" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80" /> -->
+                    <h3 class="blog-post-card-title">{{ .Params.article }}</h3>
+                    <div class="blog-post-card-date">{{ .Date.Format "Jan 2, 2006" }}</div>
+                </a>
+            </li>
+            {{ end }}
+        </ul>
+        <!-- Pagination -->
+        {{ if .Paginator.HasPrev }}
+        <a href="{{ .Paginator.Prev.URL }}" class="pagination-link">Previous</a>
+        {{ end }}
+        {{ if .Paginator.HasNext }}
+        <a href="{{ .Paginator.Next.URL }}" class="pagination-link">Next</a>
+        {{ end }}
+    </div>
+</div>
+{{ end }}
+<script>
+    function scrollToContent() {
+                    var headerHeight = document.querySelector('.header').offsetHeight; // Replace with your actual header class or ID
+                    window.scrollTo(0, headerHeight);
+                }
+                
+                // Scroll to the content position on page load
+                window.onload = scrollToContent;
+</script>
+{{ end }}

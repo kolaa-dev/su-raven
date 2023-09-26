@@ -1,0 +1,54 @@
+<div class="footer pos-rel">
+  <button id="scrollToTopButton" class="scroll-to-top-button dN">
+    <span class="material-symbols-rounded">
+      expand_less
+      </span>
+  </button>
+
+  <div class="flex sm-col-reverse sm-flexC gap30 sm-gap0 sm-justifySB">
+
+   
+    <div class=" p10 sm-d flexC gap10 sm-gap5 sm-p0">
+      <span class="fs14 textC color-info sm-fs12">@copyright {{ now.Format "2006" }}</span>
+      <a class="fs14 sm-fs12 color-theme fw-bold whiteS" href="/">{{ .Site.Data.homepage.footer.author }}</a>
+      <span class="fs20 color-info">|</span>
+        <a class="flexC gap5 color-theme fw-bold fs14 sm-fs12 text" href="{{ .Site.Data.homepage.footer.location_link }}" target="_blank">
+          <i class="material-symbols-rounded fs20 fw-bold ellipsis">location_on</i>
+          {{ .Site.Data.homepage.footer.location_name }}
+        </a>
+    </div>
+    <div class=" sm-d flexC gap10 sm-gap5">
+      <a class="flexC gap5 color-subtitle fw-bold fs14 sm-fs12 text whiteS" href="https://gohugo.io/">
+        Powered by Hugo</a>
+      <span class="fs20 color-info">|</span>
+        <a class=" flexC gap5 color-subtitle fw-bold fs14 sm-fs12 text whiteS" href="https://vercel.com/" target="_blank">
+          Hosted on Vercel
+        </a>
+    </div> 
+  
+    <ul role="list" class=" flexM pL0 gap14 mB5 mT5  dN sm-flex">
+      {{ with .Site.Data.homepage.footer.navigation }}
+        {{ range . }}
+          <li class="cl-nav-item-footer">
+            <a class="cl-nav-link" href="{{ .url }}">
+              <span class="material-symbols-rounded fs20 color-tab">
+                {{ .icon }}
+              </span>{{ .name }}
+            </a>
+          </li>
+        {{ end }}
+      {{ end }}
+    </ul>
+    
+    <div class="social-icon pos-rel sm-mB10">
+      {{ with .Site.Data.homepage.footer.social_icons }}
+        {{ range . }}
+          <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ .name }}">
+            <i class="fab {{ .icon }}"></i>
+          </a>
+        {{ end }}
+      {{ end }}
+    </div>
+    
+  </div>
+</div>

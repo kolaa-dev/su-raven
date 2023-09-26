@@ -1,0 +1,18 @@
+{{ if .Site.Data.homepage.showcase.enable }}
+<section class="sm-pT10">
+  <div class="">
+    <h1 class="fs40 color-body fw-bold ">
+      <span class="color-themer">
+        <span class="color-body">{{.Site.Data.homepage.showcase.title}} </span>
+        {{.Site.Data.homepage.showcase.subtitle}}
+      </span>
+    </h1>
+    <div class="flex gap30 sm-gap10 md-flex-col showcase-content">
+      <p id="lead-text" class="lead-text">{{ .Site.Data.homepage.showcase.description | safeHTML }}</p>
+      <div class="profile-image flexG">
+        <img class="borderR5 image-main" src="{{ .Site.Data.homepage.showcase.image.profile }}" alt="my profile picture">
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
