@@ -1,9 +1,9 @@
-<h1 align=center>Hugo su-raven | <a href="" rel="nofollow">Demo</a></h1>
+<h1 align=center>Hugo su-raven | <a href="https://www.kolaa.me" rel="nofollow">Demo</a></h1>
 
 <h4 align=center>☄️ Fast | ☁️ Fluent | 🌙 Smooth | 📱 Responsive</h4>
 <br>
 
-> Hugo su-raven is a theme based on [hugo-paper](https://github.com/nanxiaobei/hugo-paper).
+> Hugo su-raven is a theme based on [hugo](https://github.com/nanxiaobei/hugo).
 > The goal of this project is to add more features and customization to the og theme.
 
 **Documentation** can be found here: [**📚 Wiki**](https://github.com/hugo-su-raven/wiki)
@@ -19,7 +19,7 @@
 ---
 
 <p align="center">
-  <kbd><img src="https://user-images.githubusercontent.com/21258296/114303440-bfc0ae80-9aeb-11eb-8cfa-48a4bb385a6d.png" alt="Mockup image" title="Mockup"/></kbd>
+  <kbd><img src="images\Screenshot.png" alt="Mockup image" title="Mockup"/></kbd>
 </p>
 
 ---
