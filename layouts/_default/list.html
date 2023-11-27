@@ -43,7 +43,8 @@
             <li class="blog-posts-item">
                 <a class="blog-post-card" href="{{ .Permalink }}">
                     <!-- <img class="blog-post-card-image" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80" /> -->
-                    <h3 class="blog-post-card-title">{{ .Params.article }}</h3>
+                    {{ if .Params.article}} <h3 class="blog-post-card-title">{{ .Params.article }}</h3>{{end}}
+                    {{ if not .Params.article}} <h3 class="blog-post-card-title">{{ .Params.Title }}</h3>{{end}}
                     <div class="blog-post-card-date">{{ .Date.Format "Jan 2, 2006" }}</div>
                 </a>
             </li>

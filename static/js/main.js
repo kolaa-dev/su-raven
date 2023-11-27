@@ -104,7 +104,7 @@ $(document).ready(function () {
 let commentbtn = document.getElementById('commentButton')
 let commentbox = document.getElementById('commentbox')
 if (commentbtn) {
-  commentbtn?.addEventListener("click", () => {
+  commentbtn.addEventListener("click", () => {
     commentbox.classList.toggle('hide')
   })
 }
@@ -159,7 +159,7 @@ function toggleExperienceView() {
 
 // plane javascript
 
-document?.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
   // Function to handle button click and open CAPTCHA
   function openCaptcha() {
     // Display the CAPTCHA
@@ -206,14 +206,14 @@ document?.addEventListener("DOMContentLoaded", function () {
 
   // Add event listener to the "Open CAPTCHA" button
   const openCaptchaButton = document.getElementById("openCaptchaButton");
-  openCaptchaButton?.addEventListener("click", function () {
+  openCaptchaButton.addEventListener("click", function () {
     // Open the CAPTCHA when the button is clicked
     openCaptcha();
   });
 
   // Add event listener to the "Send Message" button
   const sendMessageButton = document.getElementById("sendMessageButton");
-  sendMessageButton?.addEventListener("click", function () {
+  sendMessageButton.addEventListener("click", function () {
     // Submit the form when the button is clicked
     submitForm();
   });

@@ -1,18 +1,18 @@
 # book folder name
 folderNames:
-  - folder: "Business and Entrepreneurship"
-  - folder: "Finance and Economics"
-  - folder: "Philosophy and Spirituality"
-  - folder: "Mindfulness"
-  - folder: "Self-Development"
-  - folder: "Miscellaneous"
+  - folder: "Placeholder Folder 1"
+  - folder: "Placeholder Folder 2"
+  - folder: "Placeholder Folder 3"
+  - folder: "Placeholder Folder 4"
+  - folder: "Placeholder Folder 5"
+  - folder: "Placeholder Folder 6"
 
-#header
+# header
 titleBar:
-  image: '../images/alok/titlebar.png'
+  image: 'placeholder-image.png'
 
 header:
-  image: "../images/alok/profile2.jpg"
+  image: "https://th.bing.com/th/id/OIP.GHGGLYe7gDfZUzF_tElxiQHaHa?pid=ImgDet&rs=1"
   navigation_tabs:
   - id: "about"
     name: "About"
@@ -22,17 +22,13 @@ header:
     name: "Writing"
     url: "/blog"
     icon: "history_edu"
-  - id: "mypost"
-    name: "mypost"
-    url: "/mypost"
-    icon: "history_edu"
   - id: "reading"
     name: "Reading"
     url: "/book"
     icon: "local_library"
-  
+
   contact_tab:
-    id: "about"
+    id: "contact"
     name: "Contact"
     url: "/#contact"
     icon: "mail"
@@ -40,17 +36,11 @@ header:
 # showcase
 showcase:
   enable: true
-  title: "Hi I’m"
-  subtitle: "Aalok!"
-  # digination: "Head of Techology"
-  description: "In my present role at <a class='color-theme' href='https://newfi.com/' target='_blank'>Newfi Lending</a>,
-   I spearhead product development and provide tools to enhance the efficiency of our sales team.
-  I thrive as a <a class='color-theme' href='https://creative.artisantalent.com/specialized-generalist' target='_blank'>specialized generalist</a>. 
-  My expertise encompasses designing and developing enterprise analytics solutions, fortifying cybersecurity, steering offshore engineering teams and product management. 
-  Beyond my professional journey, I take immense pride in being a devoted father to two wonderful children.
-  "
+  title: "Hi, I'm"
+  subtitle: "A User!"
+  description: "This is a placeholder description. You can replace this text with your own contentThis is a placeholder description. You can replace this text with your own content.This is a placeholder description. You can replace this text with your own contentThis is a placeholder description. You can replace this text with your own contentThis is a placeholder description. You can replace this text with your own contentThis is a placeholder description. You can replace this text with your own content"
   image:
-    profile: "images/alok/aalok.jpg"
+    profile: "https://th.bing.com/th/id/OIP.ET4QVv09ItsElQMsudgZsAHaFY?pid=ImgDet&w=487&h=354&rs=1"
   button:
     icon: "icon-mail-fill"
     btnText: "Contact"
@@ -60,159 +50,60 @@ showcase:
 about:
   enable: true
   title: "Who am I?"
-  content: '<p class="lead pB10">
-   I&#39;m a proud father of two beautiful children, aged 6 and 9. I am easy-going and sociable, always eager to learn, 
-   and naturally inclined to take on leadership roles. I am passionate about my work and believe in leading by example 
-   and working closely with my teams.
-    </p>
-    <p class="lead">
-    My profile blends technical and managerial expertise, focused on technology-driven projects. With an entrepreneurial mindset,
-     I bring a unique combination of business and product vision to tech teams. I thrive on continuous learning and exploring how technology 
-     enhances user experiences. I take great responsibility for myself, my team, and my clients, fostering a positive and approachable attitude
-    </p>
-    <p class="lead">
-    Technically, I am a specialized generalist, seamlessly navigating domains like consumer technology, data analytics, cybersecurity, IT projects, and team leadership.
-     Working with diverse languages and frameworks in web development, I quickly tackle various aspects of the technology landscape.
-    </p>'
-  
+  content: "This is a placeholder content. You can replace this text with your own content."
 
 # education
 education:
   enable: true
   title: "Education"
   items:
-    - university: "Rensselaer Polytechnic Institute (RPI)"
-      year: "2000-2004"
-      degree: "B.S., Management Information Systems"
-      collegeLink: "https://www.rpi.edu/"
-      detail: "Pursued a Master of Science in Management Information Systems with a focus on leveraging technology to enhance business processes and decision-making. 
-              Completed coursework in database management, business intelligence, software development, and project management. 
-              Collaborated on team projects to design and implement solutions for real-world business challenges. 
-              Gained hands-on experience with data analysis tools, programming languages, and software development methodologies. 
-              Developed a comprehensive understanding of IT systems, data management, and their strategic role in organizations.
-              Engaged in industry seminars, workshops, and networking events to stay updated on emerging trends in MIS. 
-              Graduated with a strong foundation in both technical and business aspects of information systems.
-              The program equipped me with the skills to drive innovation, enhance efficiency, and solve complex business problems through technology.
-              Relevant Courses: Database Management, Business Intelligence, Systems Analysis and Design, Project Management, Enterprise Architecture.
-              Awards: Dean's List, MIS Outstanding Student Award."
+    - university: "Placeholder University"
+      year: "20XX-20XX"
+      degree: "Placeholder Degree"
+      collegeLink: "https://www.example.com"
+      detail: "This is a placeholder detail. You can replace this text with your own content."
 
 # experience
 experience:
   enable: true
   title: "Experience"
-  description: "Embarking on a professional odyssey of over 20+ years,
-   my voyage weaves a tapestry of expertise in propelling innovation, 
-   refining processes, and delivering profound solutions. With a versatile background spanning technical management, 
-   analytics, architecture, and business analysis, my journey underscores an unyielding dedication to excellence across diverse domains."
+  description: "This is a placeholder description. You can replace this text with your own content."
   button:
     icon: "icon-profile-fill"
     btnText: "Download Resume"
     URL: "/pdfview"
 
   items:
-    - title: "Technical Product Manager"
-      company: "Newfi Lending"
-      duration: "2017 – Current"
-      location: "Emeryville CA"
-      companyLink: 'https://newfi.com/'
-      detail: " 
-      <ul>
-        <li>Led and groomed an offshore engineering team of 10 engineers for over 5 years, resulting in a high retention rate of 90%.</li>
-        <li>Roadmapped and executed 3 versions of the product, improving the user experience, reducing engineering costs, and integrating with newer technologies.</li>
-        <li>Successfully added 5 non-standard mortgage programs that increased monthly mortgage applications by 20%.</li>
-        <li>Migrated authentication to the cloud, adding an additional layer of security.</li>
-        <li>Increased the number of reviews for loan officers, which enabled them to get more business.</li>
-      </ul>
-      "
+    - title: "Placeholder Title 1"
+      company: "Placeholder Company 1"
+      duration: "20XX – 20XX"
+      location: "Placeholder Location 1"
+      companyLink: 'https://www.example.com'
+      detail: "This is a placeholder detail. You can replace this text with your own content."
 
-    - title: "Faculty Analytics and Insight Manager (Consultant)"
-      company: "Stanford University"
-      duration: "2015 – 2017"
-      location: "Palo Alto CA"
-      companyLink: 'https://www.stanford.edu/'
-      detail: "
-      <ul>
-        <li>Built a centralized reporting application for the Office of Academic Affairs.</li>
-        <li>Increased efficiency and productivity by 20% by centralizing and standardizing reporting processes.</li>
-        <li>Integrated data from third-party sources to create a 360-degree view of faculty progress.</li>
-        <li>Authored blogs and technical documents.</li>
-        <li>Proficient in SQL, Dimensional Modeling, and BI Tool.</li>
-      </ul>
-        <b>Accomplishments:</b>
+    - title: "Placeholder Title 2"
+      company: "Placeholder Company 2"
+      duration: "20XX – 20XX"
+      location: "Placeholder Location 2"
+      companyLink: 'https://www.example.com'
+      detail: "This is a placeholder detail. You can replace this text with your own content."
 
-      <ul>
-        <li><b>Trimmed over 600 man-hours</b> by eliminating 45+ manually maintained Excel reports at Stanford University.</li>
-        <li>Developed a key insights product for the Dean's Office in <b>retaining 1800+ School of Medicine’s faculty.</b></li>
-        <li><b>Replaced an unsecured/hacked</b> authentication process that accelerated user engagement by 150%.</li>
-      </ul>
-        "
-
-    - title: "Solution Architect (Consultant)"
-      company: "US Department of Energy (DoE)"
-      duration: "2013 – 2015"
-      location: "Las Vegas, NV"
-      companyLink: 'https://www.energy.gov/'
-      detail: "
-      <ul>
-        <li>Designed and Developed semantic layer for Application Delivery Team using Oracle Technologies.</li>
-        <li>Documented <b>functional and technical design document</b>.</li>
-        <li><b>Mentored</b> 3 team members with best practices, sharing knowledge to improve technical skills.</li>
-      </ul> "
-
-    - title: "Sr. Technical Manager– BI Practice"
-      company: "Mythics Inc."
-      duration: "2008 – 2013"
-      location: "Virginia Beach, VA"
-      companyLink: 'https://mythics.com/contact/'
-      detail: "
-      <ul>
-        <li><b>Elizabeth Arden:</b> Successfully led a project involving the migration of 4100 reports.</li>
-        <li><b>United States Department of Agriculture (USDA):</b> Automated operational reports using Oracle BI Publisher.</li>
-        <li><b>United States Citizenship & Immigration Services (USCIS):</b> Delivered the new BI program SMART (Standard Management & Analysis Report Tool) to over 5000+ users.</li>
-        <li><b>Maryland State:</b> Installed and configured the Oracle BI platform for a new program initiated by the governor’s office. The program provided reporting for 20 departments in the state of Maryland.</li>
-      </ul>
-        <b>Accomplishments:</b>
-
-      <ul>
-        <li><b>Succeeded in growing</b> Mythics Consulting Service - BI Practice from 3 to 25 consultants.</li>
-        <li>Automated 75 pages National Cotton Report at USAD, <b>delivered to US Senate</b> quarterly.</li>
-        <li><b>Trained 400+ federal employees</b> onsite to improve technical skills at US Customs & Immigration Services.</li>
-        <li>Voted <b>“Rookie of the Year”</b> by Mythics Consulting Services.</li>
-      </ul>"
-
-    - title: "Business Analyst"
-      company: "Capital One Financials /GreenPoint Mortgage"
-      duration: "2004 – 2008"
-      location: "Novato CA"
-      companyLink: 'https://www.thetruthaboutmortgage.com/'
-      detail: "
-      <ul>
-        <li>Gathered business requirements from users and Subject Matter Experts (SMEs) to gain a comprehensive understanding of the business processes.</li>
-        <li>Conducted Joint Application Design (JAD) sessions involving management, SMEs, users, and other stakeholders to facilitate effective communication and collaboration.</li>
-        <li>Developed Logical Process Flow Diagrams and established Data Mappings between Loan Origination System (LOS) and Risk and Fraud Detection Module (RFDM).</li>
-        <li>Created Use Case, Data Flow, and Entity-Relationship (ER) diagrams using MS Visio to visualize and communicate system functionalities and data structures.</li>
-        <li>Generated summary-to-detailed reports linkage using pivot tables, allowing for efficient data analysis and visualization.</li>
-        <li>Documented Technical Specifications to outline system requirements and functionalities for walkthroughs and sign-off processes.</li>
-        <li>Conducted formal Iteration Reviews with the business stakeholders prior to the deployment of reports and dashboards to ensure alignment with expectations.</li>
-        <li>Provided training to the business community on utilizing Business Intelligence (BI) Tools to independently create reports and dashboards.</li>
-      </ul>
-      "
-  
+# contact
 # contact
 contact:
   enable: true
   title: "Contact"
   # goolge capcha code
-  captcha_id: "6LdQLw0oAAAAAHbLfANNFINvixDAmu0zN9WJroXY"
+  captcha_id: "6LdQLw0fcvjkbfhghfdi54y5874einbkrth"
   form:
   # formSubmit action link
-    action: "https://formsubmit.co/1d935db3a872f45049b43db88c634362"
+    action: "https://formsubmit.co/1d935db3a872f4505486546546854"
     name: "name"
     email: "Email Address"
     message: "Type Your Message Here"
   email:
     title: "Email"
-    email: '<a class="color-white" href="mailto:aalok@kolaa.me" target="_blank">aalok@kolaa.me</a>'
+    email: '<a class="color-white" href="mailto:mymail@gmail.com" target="_blank">mymail@gmail.com</a>'
   address:
     title: "Address"
     address: "Emeryville, CA"
@@ -226,31 +117,27 @@ contact:
     icon: "icon-mail-fill"
     btnText: "Send Message"
 
+
 # id for plugin
 plugin:
-  # create comment id from https://commentbox.io
   commentBox:
-    commentId: '5704207160049664-proj'
+    commentId: 'your-commentbox-id'
     textColor: 'black'
     backgroundColor: 'transparent'
-
-  # create google analytic tracting from https://analytics.google.com
   googleAnalytics:
-    ga_tracking_id: "G-E9LR15KQ5G"
-
-  # create hotjar id from https://insights.hotjar.com
+    ga_tracking_id: "Your-Google-Analytics-ID"
   hotjar:
-    hotjar_site_id: "3651099"
+    hotjar_site_id: "Your-Hotjar-Site-ID"
 
 # footer
 footer:
   copyright: "2023 Your Company"
-  author: "Aalok Surana"
-  location_name: 'Emeryville, CA'
-  location_link: "https://www.google.com/maps/place/Emeryville,+CA/@37.8384767,-122.30486,14z/data=!4m6!3m5!1s0x80857e14ea1f8eb3:0x481d1831a8b07107!8m2!3d37.8395028!4d-122.2892278!16zL20vMHF4eW4"
+  author: "Your name"
+  location_name: 'Your Location'
+  location_link: "https://www.example.com/maps-link"
   powered_by_hugo_link: "https://gohugo.io/"
   hosted_on_vercel_link: "https://vercel.com/"
-  
+
   navigation:
   - name: "About"
     url: "/"
@@ -263,11 +150,11 @@ footer:
 
   social_icons:
   - name: "Twitter"
-    url: "https://twitter.com/kolaaLLC"
+    url: "https://twitter.com/your-twitter"
     icon: "fa-x-twitter"
   - name: "GitHub"
-    url: "https://github.com/kolaa-dev"
+    url: "https://github.com/your-github"
     icon: "fa-github"
   - name: "LinkedIn"
-    url: "https://www.linkedin.com/in/suranaalok/"
+    url: "https://www.linkedin.com/in/your-linkedin"
     icon: "fa-linkedin-in"
